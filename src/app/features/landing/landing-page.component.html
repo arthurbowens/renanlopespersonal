@@ -12,105 +12,234 @@
         <p class="text-xs text-slate-400">Personal Trainer | Coach Híbrido</p>
       </div>
       <a
-        href="#contato"
+        [href]="wa.falarComigo"
+        target="_blank"
+        rel="noopener noreferrer"
         class="rounded-full bg-gradient-to-r from-lime-300 to-emerald-300 px-5 py-2.5 text-sm font-bold text-slate-950 shadow-lg shadow-lime-500/30 transition hover:scale-[1.02]"
       >
-        Agendar consultoria
+        Falar comigo
       </a>
     </div>
   </header>
 
   <main class="relative z-10">
-    <section class="mx-auto grid w-full max-w-6xl gap-12 px-6 pb-14 pt-12 lg:grid-cols-2 lg:px-8 lg:pb-20 lg:pt-20">
-      <div class="space-y-8">
-        <span class="inline-flex rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200">
+    <section
+      class="mx-auto grid w-full max-w-6xl gap-10 px-6 pb-16 pt-12 lg:grid-cols-2 lg:items-start lg:gap-12 lg:px-8 lg:pb-24 lg:pt-20"
+    >
+      <div class="space-y-6 lg:space-y-8">
+        <span
+          class="inline-flex rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200"
+        >
           Formado em Educação Física
         </span>
-        <h1 class="text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl">
-          Cansado de treinar, parar e recomeçar sem ver um corpo que te representa?
+        <h1 class="text-4xl font-black leading-tight text-white md:text-5xl lg:text-[2.75rem] lg:leading-[1.1]">
+          Cansado de treinar, parar e recomeçar… sem nunca chegar no corpo que você quer?
         </h1>
-        <p class="max-w-xl text-base leading-relaxed text-slate-300 md:text-lg">
-          Você não precisa de mais motivação. Você precisa de um método que encaixe na sua rotina e
-          gere resultado de verdade.
-        </p>
-        <blockquote class="max-w-xl rounded-2xl border border-lime-300/25 bg-lime-300/10 p-4 text-sm leading-relaxed text-lime-100">
-          "Eu já vivi o extremo do fisiculturismo e hoje ensino um caminho inteligente: shape
-          estético, corpo funcional e qualidade de vida."
-        </blockquote>
-
-        <div class="grid grid-cols-2 gap-3 max-w-md">
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-            <p class="text-2xl font-black text-white">4x</p>
-            <p class="text-xs text-slate-300">Campeão Overall NPC</p>
-          </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-            <p class="text-2xl font-black text-white">2025</p>
-            <p class="text-xs text-slate-300">Campeão Arnold Brasil</p>
-          </div>
+        <div class="max-w-xl space-y-4 text-base leading-relaxed text-slate-300 md:text-lg">
+          <p>
+            Você não precisa de mais motivação.<br />
+            Você precisa de um método que funcione na sua rotina — e gere resultado de verdade.
+          </p>
+          <p>
+            Eu ajudo homens e mulheres a transformar o físico com estratégia, consistência e execução
+            correta — sem extremismo.
+          </p>
         </div>
 
-        <div class="flex flex-wrap gap-4">
-          <a
-            href="#contato"
-            class="rounded-full bg-gradient-to-r from-lime-300 to-emerald-300 px-6 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-lime-500/30 transition hover:scale-[1.02]"
-          >
-            Quero transformar meu físico
-          </a>
-          <a
-            href="#servicos"
-            class="rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold text-slate-100 backdrop-blur transition hover:border-lime-300 hover:text-lime-200"
-          >
-            Ver como funciona
-          </a>
-        </div>
-        <p class="text-xs font-medium text-amber-200">
-          Vagas limitadas para acompanhamento mensal.
-        </p>
-      </div>
-
-      <div class="space-y-6">
-        <img
-          src="/foto1.jpeg"
-          alt="Renan Lopes em competição"
-          class="h-[520px] w-full rounded-3xl border border-white/10 object-cover object-top shadow-2xl shadow-black/40"
-        />
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-          <p class="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-lime-300">Credenciais</p>
-          <div class="space-y-4">
-            @for (achievement of achievements; track achievement.title) {
-              <article class="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
-                <h2 class="text-base font-semibold text-white">{{ achievement.title }}</h2>
-                <p class="mt-2 text-sm leading-relaxed text-slate-300">{{ achievement.description }}</p>
-              </article>
+        <div class="max-w-xl">
+          <p class="text-sm font-semibold text-slate-200">Treinos personalizados com foco em:</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            @for (pill of focusPills; track pill) {
+              <span class="rounded-full border border-lime-300/35 bg-lime-300/10 px-3 py-1.5 text-xs font-medium text-lime-100">{{
+                pill
+              }}</span>
             }
           </div>
+        </div>
+
+        <p class="max-w-xl text-sm text-slate-400">
+          Resultado começa a aparecer nas primeiras semanas — quando o plano faz sentido pra você.
+        </p>
+
+        <a
+          [href]="wa.planoPersonalizado"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-full bg-gradient-to-r from-lime-300 to-emerald-300 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-lime-500/30 transition hover:scale-[1.02] sm:w-auto"
+        >
+          <span aria-hidden="true">👉</span> Quero começar meu plano personalizado
+        </a>
+
+        <div
+          class="max-w-xl space-y-4 border-t border-white/10 pt-8 text-slate-300 [text-wrap:balance]"
+        >
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/90">Autoridade</p>
+          <p class="text-sm leading-relaxed text-slate-200">
+            Enquanto muitos treinadores só estudaram, <span class="text-white">eu vivi o processo</span> no
+            mais alto nível.
+          </p>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-baseline gap-2">
+              <span class="shrink-0" aria-hidden="true">🏆</span>
+              <span>4x Campeão Overall NPC</span>
+            </li>
+            <li class="flex items-baseline gap-2">
+              <span class="shrink-0" aria-hidden="true">🏆</span>
+              <span>Campeão Arnold Brasil 2025</span>
+            </li>
+          </ul>
+          <p class="text-sm leading-relaxed text-slate-400">
+            Hoje, uso essa experiência para um objetivo diferente: te entregar resultado
+            <span class="text-slate-200">sem você precisar viver como atleta.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="lg:sticky lg:top-24 lg:self-start">
+        <div
+          class="flex w-full items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 py-1 shadow-2xl shadow-black/40"
+        >
+          <img
+            src="/foto1.jpeg"
+            alt="Renan Lopes em competição"
+            class="block h-auto max-h-[min(88vh,42rem)] w-auto max-w-full object-contain"
+            decoding="async"
+            fetchpriority="high"
+          />
         </div>
       </div>
     </section>
 
-    <section class="border-y border-white/10 bg-slate-900/55">
+    <section class="border-y border-white/10 bg-slate-900/50">
       <div class="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 lg:grid-cols-2 lg:px-8">
         <img
           src="/foto2.jpeg"
           alt="Renan Lopes em treino"
-          class="h-full min-h-[500px] w-full rounded-3xl border border-white/10 object-cover object-top shadow-2xl shadow-black/35"
+          class="h-full min-h-[400px] w-full rounded-3xl border border-white/10 object-cover object-center shadow-2xl shadow-black/35 lg:min-h-[500px]"
         />
         <div class="my-auto">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">Sobre Renan</p>
-          <h2 class="mt-3 text-3xl font-bold text-white">Evolução com consistência e sem extremismo</h2>
-          <p class="mt-4 max-w-3xl text-slate-300">
-            Hoje minha fase é voltada para qualidade de vida, com corrida, bike e musculação
-            estratégica. O foco é unir saúde, condicionamento e um físico estético que funciona no
-            dia a dia.
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">História</p>
+          <h2 class="mt-3 text-3xl font-bold text-white">Conexão e caminho inteligente</h2>
+          <blockquote
+            class="mt-6 border-l-2 border-lime-300/50 pl-4 text-lg font-medium leading-snug text-slate-200"
+          >
+            “Eu já vivi o extremo do fisiculturismo… e foi isso que me mostrou o caminho
+            inteligente.”
+          </blockquote>
+          <p class="mt-6 text-sm font-semibold text-white">Hoje meu foco é outro:</p>
+          <ul class="mt-3 space-y-2 text-slate-300">
+            <li class="flex items-center gap-2"><span>✔</span> Shape estético</li>
+            <li class="flex items-center gap-2"><span>✔</span> Corpo funcional</li>
+            <li class="flex items-center gap-2"><span>✔</span> Qualidade de vida</li>
+          </ul>
+          <p class="mt-6 text-slate-300">
+            Sem loucura, sem exagero — mas com <span class="text-white">resultado real</span>.
           </p>
-          <div class="mt-10 grid gap-5 sm:grid-cols-2">
-            @for (pillar of trainingPillars; track pillar.title) {
-              <article class="rounded-2xl border border-cyan-300/20 bg-slate-950/90 p-6">
-                <h3 class="text-lg font-semibold text-cyan-200">{{ pillar.title }}</h3>
-                <p class="mt-2 text-sm text-slate-300">{{ pillar.description }}</p>
-              </article>
-            }
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">
+          Um método que se adapta à sua vida — não o contrário
+        </h2>
+        <p class="mt-4 text-slate-300">Você não precisa virar atleta pra ter resultado.</p>
+        <p class="mt-2 text-slate-300">Você precisa de:</p>
+        <ul class="mt-3 list-inside list-disc text-slate-200 marker:text-lime-300">
+          <li>estratégia</li>
+          <li>consistência</li>
+          <li>execução correta</li>
+        </ul>
+        <p class="mt-4 text-slate-200">E é exatamente isso que eu entrego no acompanhamento.</p>
+      </div>
+    </section>
+
+    <section class="border-y border-white/10 bg-slate-900/30">
+      <div class="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
+        <h2 class="text-2xl font-bold text-white md:text-3xl">O que você ganha</h2>
+        <p class="mt-2 text-sm text-slate-400">Benefícios diretos do método</p>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          @for (b of benefits; track b.title) {
+            <article class="rounded-2xl border border-white/10 bg-slate-950/60 p-6">
+              <h3 class="text-lg font-semibold text-white">{{ b.title }}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-300">{{ b.description }}</p>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados" class="border-t border-white/10 bg-slate-950/60">
+      <div class="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div class="max-w-2xl">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-lime-300/90">Prova social</p>
+            <h2 class="mt-3 text-3xl font-bold text-white">Resultados reais de quem seguiu o método</h2>
+            <p class="mt-4 text-slate-300">
+              Transformações de alunos e alunas que saíram da inconsistência e começaram a evoluir com
+              direção.
+            </p>
+            <ul class="mt-4 space-y-1 text-sm text-slate-400">
+              <li>✔ acompanhamento próximo</li>
+              <li>✔ ajustes constantes</li>
+              <li>✔ método aplicado</li>
+            </ul>
           </div>
+          <a
+            [href]="wa.proximoResultado"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex shrink-0 items-center justify-center gap-1 rounded-full border border-lime-300/40 bg-lime-300/10 px-5 py-2.5 text-sm font-bold text-lime-100 transition hover:bg-lime-300/20 sm:gap-2"
+          >
+            <span aria-hidden="true">👉</span> Quero ser o próximo resultado
+          </a>
+        </div>
+
+        <div class="mt-12 space-y-12">
+          @for (r of transformationResults; track r.id) {
+            <article
+              class="overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/80 to-slate-950/90 shadow-xl shadow-black/20"
+            >
+              <p
+                class="border-b border-white/10 px-5 py-3 text-center text-xs font-semibold tracking-wide text-slate-400"
+              >
+                {{ r.label }}
+              </p>
+              <div class="grid grid-cols-1 gap-px bg-white/10 md:grid-cols-2">
+                <div class="relative min-h-0 bg-slate-900">
+                  <p
+                    class="absolute left-4 top-4 z-10 rounded-full bg-slate-950/85 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-300 ring-1 ring-white/20 backdrop-blur-sm"
+                  >
+                    Antes
+                  </p>
+                  <div class="aspect-[3/4] w-full sm:aspect-[4/5]">
+                    <img
+                      [src]="r.beforeSrc"
+                      [attr.alt]="'Antes — ' + r.label"
+                      class="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <div class="relative min-h-0 bg-slate-900">
+                  <p
+                    class="absolute left-4 top-4 z-10 rounded-full bg-lime-300/95 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-950 ring-1 ring-lime-200/30"
+                  >
+                    Depois
+                  </p>
+                  <div class="aspect-[3/4] w-full sm:aspect-[4/5]">
+                    <img
+                      [src]="r.afterSrc"
+                      [attr.alt]="'Depois — ' + r.label"
+                      class="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </article>
+          }
         </div>
       </div>
     </section>
@@ -118,21 +247,126 @@
     <section id="servicos" class="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
       <div class="max-w-3xl">
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-violet-300">Serviços</p>
-        <h2 class="mt-3 text-3xl font-bold text-white">Metodologia aplicada ao seu objetivo</h2>
+        <h2 class="mt-3 text-3xl font-bold text-white">O plano muda pra você — o método não</h2>
         <p class="mt-4 text-slate-300">
-          Do atleta ao aluno lifestyle: o plano muda para você, mas o princípio é o mesmo.
-          Estratégia clara, consistência e execução.
+          Escolha o que faz sentido; no acompanhamento, tudo se encaixa na mesma lógica: estratégia,
+          consistência e execução.
         </p>
       </div>
-      <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         @for (service of services; track service.title) {
           <article
             class="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1 hover:border-lime-300/40 hover:bg-white/[0.06]"
           >
-            <h3 class="text-xl font-semibold text-white">{{ service.title }}</h3>
+            <p class="text-lime-300" aria-hidden="true">✔</p>
+            <h3 class="mt-2 text-xl font-semibold text-white">{{ service.title }}</h3>
             <p class="mt-3 text-sm leading-relaxed text-slate-300">{{ service.description }}</p>
           </article>
         }
+      </div>
+    </section>
+
+    <section
+      id="loja-parceira"
+      class="border-t border-stone-500/20 bg-gradient-to-b from-slate-950/90 via-[#0f1a12] to-slate-950/90"
+      aria-labelledby="titulo-loja-parceira"
+    >
+      <div class="mx-auto grid w-full max-w-6xl items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:px-8">
+        <div
+          class="order-2 overflow-hidden rounded-2xl border border-stone-500/25 bg-stone-900/40 shadow-2xl shadow-black/30 lg:order-1"
+        >
+          <img
+            src="/lojaparceira.jpeg"
+            alt="Logo Djiri Suplementos e Empório Natural, loja parceira do Renan Lopes"
+            class="h-full w-full object-contain object-center p-2 sm:max-h-[420px]"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="order-1 space-y-5 lg:order-2">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400">Parceiro oficial</p>
+          <h2 id="titulo-loja-parceira" class="text-3xl font-bold text-stone-50 [text-wrap:balance]">
+            Suplementação alinhada com o seu resultado
+          </h2>
+          <p class="text-sm text-stone-500">Djiri — Suplementos &amp; Empório Natural</p>
+          <p class="text-sm leading-relaxed text-stone-300 [text-wrap:balance]">
+            Trabalho com uma loja parceira para facilitar sua rotina com suplementos e alimentos de
+            qualidade — tudo alinhado com o que aplicamos no treino.
+          </p>
+          <p
+            class="rounded-2xl border border-[#4a6741]/40 bg-[#1a2218]/60 px-4 py-3 text-sm leading-relaxed text-stone-200"
+          >
+            <span class="text-lg" aria-hidden="true">👉</span>
+            Ao iniciar o acompanhamento, você recebe <span class="font-semibold text-[#b8c9a3]">indicação direta</span> +
+            <span class="font-semibold text-lime-200/90"> desconto exclusivo</span> na loja.
+          </p>
+          <p class="text-sm leading-relaxed text-stone-300 [text-wrap:balance]">
+            Sem complicação, sem perda de tempo — tudo já ajustado para o seu objetivo.
+          </p>
+          <div
+            class="flex flex-col gap-3 border-t border-stone-500/20 pt-5 sm:flex-row sm:items-center sm:gap-4"
+          >
+            <a
+              [href]="wa.acompanhamento"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-lime-300 to-emerald-300 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-lime-500/20 transition hover:scale-[1.02] sm:w-auto"
+            >
+              Quero iniciar meu acompanhamento
+            </a>
+            <a
+              [href]="wa.djiri"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stone-500/40 bg-[#4a6741]/20 px-5 py-2.5 text-sm font-semibold text-stone-100 transition hover:border-lime-300/40 hover:text-lime-100 sm:w-auto"
+            >
+              Dúvida? Chamar no WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consultoria" class="border-t border-white/10 bg-slate-900/30">
+      <div class="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/90">Como funciona</p>
+          <h2 class="mt-3 text-3xl font-bold text-white">Você não recebe um treino. Você entra em um processo.</h2>
+        </div>
+        <ol class="mt-10 grid gap-4 sm:grid-cols-2">
+          @for (step of consultancySteps; track step.order) {
+            <li class="flex gap-4 rounded-2xl border border-amber-200/15 bg-slate-950/50 p-6">
+              <span
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-200/20 to-lime-300/20 text-sm font-black text-amber-100"
+              >
+                {{ step.order }}
+              </span>
+              <div class="min-w-0 flex-1">
+                <h3 class="text-lg font-semibold text-white">{{ step.title }}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-300">{{ step.description }}</p>
+              </div>
+            </li>
+          }
+        </ol>
+        <p
+          class="mt-8 rounded-2xl border border-lime-300/25 bg-lime-300/5 px-5 py-4 text-center text-sm font-medium text-lime-100 [text-wrap:balance]"
+        >
+          👉 Aqui você não fica sozinho com um PDF.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto w-full max-w-6xl px-6 py-12 lg:px-8" aria-labelledby="quebra-objecao">
+      <div
+        class="rounded-2xl border border-white/10 bg-slate-900/40 px-6 py-8 text-center [text-wrap:balance]"
+        id="quebra-objecao"
+      >
+        <h2 class="text-lg font-semibold text-slate-200">Sobre resultados</h2>
+        <p class="mt-3 text-sm text-slate-400">
+          Resultados variam de acordo com sua rotina, consistência e aplicação.<br />
+          Mas uma coisa é padrão:
+        </p>
+        <p class="mt-4 text-lg font-bold text-white">👉 Quem segue o método, evolui.</p>
       </div>
     </section>
   </main>
@@ -142,31 +376,33 @@
       class="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-12 text-sm text-slate-300 lg:flex-row lg:items-center lg:justify-between lg:px-8"
     >
       <div>
-        <p class="text-xl font-bold text-white">Pronto para o próximo nível?</p>
+        <p class="text-xl font-bold text-white">Pronto para finalmente ver resultado no seu corpo?</p>
         <p class="mt-2 max-w-xl">
-          Atendimento online e presencial com estratégia personalizada para acelerar seus resultados
+          Atendimento online e presencial, com estratégia personalizada para acelerar sua evolução
           desde as primeiras semanas.
         </p>
+        <p class="mt-3 text-amber-200/90" role="status">⚠️ Vagas limitadas para acompanhamento mensal</p>
       </div>
-      <div class="flex flex-wrap gap-4">
+      <div class="flex flex-col flex-wrap gap-3 sm:flex-row sm:items-center">
         <a
-          href="https://wa.me/5500000000000"
+          [href]="wa.comecarAgora"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 font-semibold text-slate-950 transition hover:brightness-110"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 font-semibold text-slate-950 transition hover:brightness-110"
         >
+          <span aria-hidden="true">👉</span>
+          <span>Quero começar agora pelo WhatsApp</span>
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path
               d="M20.52 3.48A11.88 11.88 0 0 0 12.07 0C5.55 0 .25 5.3.25 11.82c0 2.09.55 4.13 1.58 5.93L0 24l6.42-1.68a11.83 11.83 0 0 0 5.65 1.44h.01c6.51 0 11.82-5.3 11.82-11.82 0-3.15-1.22-6.1-3.38-8.46Zm-8.45 18.3h-.01a9.9 9.9 0 0 1-5.05-1.39l-.36-.21-3.81 1 1.02-3.72-.24-.38a9.85 9.85 0 0 1-1.52-5.27c0-5.45 4.43-9.88 9.89-9.88a9.78 9.78 0 0 1 6.99 2.9 9.81 9.81 0 0 1 2.89 7c0 5.45-4.43 9.88-9.9 9.88Zm5.42-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.66.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.08-.3-.15-1.27-.47-2.42-1.5a8.97 8.97 0 0 1-1.67-2.08c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.66-1.6-.91-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.8.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.08 3.18 5.03 4.46.7.3 1.24.47 1.67.6.7.22 1.33.18 1.83.11.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.56-.35Z"
             />
           </svg>
-          WhatsApp
         </a>
         <a
-          href="https://instagram.com/"
+          href="https://www.instagram.com/renanzinholopess/"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-3 font-semibold text-white backdrop-blur transition hover:border-pink-300 hover:text-pink-200"
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-3 font-semibold text-white backdrop-blur transition hover:border-pink-300 hover:text-pink-200"
         >
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path
@@ -178,7 +414,8 @@
       </div>
     </div>
     <p class="border-t border-white/10 px-6 py-4 text-center text-xs text-slate-500 lg:px-8">
-      © {{ currentYear }} Renan Lopes. Todos os direitos reservados.
+      © {{ currentYear }} Renan Lopes. Todos os direitos reservados. Imagens de resultados cedidas com
+      consentimento.
     </p>
   </footer>
 </div>
